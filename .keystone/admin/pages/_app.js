@@ -1,8 +1,12 @@
 import { getApp } from '@keystone-next/keystone/___internal-do-not-use-will-break-in-patch/admin-ui/pages/App';
 
-import * as view0 from '..\\..\\..\\node_modules\\@keystone-next\\keystone\\___internal-do-not-use-will-break-in-patch\\admin-ui\\id-field-view';
-import * as view1 from '..\\..\\..\\node_modules\\@keystone-next\\fields\\types\\text\\views';
-import * as view2 from '..\\..\\..\\node_modules\\@keystone-next\\fields\\types\\password\\views';
+import * as view0 from '../../../node_modules/@keystone-next/keystone/___internal-do-not-use-will-break-in-patch/admin-ui/id-field-view';
+import * as view1 from '../../../node_modules/@keystone-next/fields/types/text/views';
+import * as view2 from '../../../node_modules/@keystone-next/fields/types/password/views';
+import * as view3 from '../../../node_modules/@keystone-next/fields/types/relationship/views';
+import * as view4 from '../../../node_modules/@keystone-next/fields/types/select/views';
+import * as view5 from '../../../node_modules/@keystone-next/fields/types/integer/views';
+import * as view6 from '../../../node_modules/@keystone-next/cloudinary/views';
 
 var adminConfig = {};
 
@@ -145,12 +149,38 @@ export default getApp({
               },
               loc: { start: 22, end: 234 },
             },
+            {
+              kind: 'Field',
+              name: { kind: 'Name', value: 'authenticatedItem' },
+              selectionSet: {
+                kind: 'SelectionSet',
+                selections: [
+                  {
+                    kind: 'InlineFragment',
+                    typeCondition: {
+                      kind: 'NamedType',
+                      name: { kind: 'Name', value: 'User' },
+                    },
+                    selectionSet: {
+                      kind: 'SelectionSet',
+                      selections: [
+                        { kind: 'Field', name: { kind: 'Name', value: 'id' } },
+                        {
+                          kind: 'Field',
+                          name: { kind: 'Name', value: 'name' },
+                        },
+                      ],
+                    },
+                  },
+                ],
+              },
+            },
           ],
         },
       },
     ],
   },
-  fieldViews: [view0, view1, view2],
-  adminMetaHash: '1p2qkcl',
+  fieldViews: [view0, view1, view2, view3, view4, view5, view6],
+  adminMetaHash: 'vxm7dc',
   adminConfig: adminConfig,
 });
